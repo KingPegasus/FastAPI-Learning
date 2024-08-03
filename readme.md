@@ -15,8 +15,8 @@ https://code.visualstudio.com/docs/python/python-tutorial
 
 ## Install Dependencies
 
-- pip install fastapi
 - pip install "uvicorn[standard]"
+- pip install -r requirements.txt
 
 ## Run in terminal
 

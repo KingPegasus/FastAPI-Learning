@@ -1,0 +1,13 @@
+click
+alembic
+fastapi
+psycopg2-binary
+pydantic
+SQLAlchemy
+starlette
+uvicorn[standard]
+pip-tools
+passlib
+pyjwt
+python-multipart
+bcrypt

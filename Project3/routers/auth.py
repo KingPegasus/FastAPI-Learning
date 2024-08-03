@@ -8,7 +8,7 @@ from passlib.context import CryptContext
 from sqlalchemy.orm import Session
 from starlette import status
 from fastapi.security import OAuth2PasswordRequestForm, OAuth2PasswordBearer
-from jose import jwt, JWTError
+import jwt
 
 
 router = APIRouter(prefix="/auth", tags=["auth"])
@@ -86,7 +86,7 @@ async def get_current_user(token: Annotated[str, Depends(oauth2_bearer)]):
             )
 
         return {"username": username, "id": user_id, "user_role": user_role}
-    except JWTError:
+    except jwt.DecodeError:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED, detail="Could not validate user."
         )
